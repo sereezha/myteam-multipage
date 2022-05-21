@@ -86,7 +86,7 @@
 .title {
 	margin-bottom: 18px;
 	@media screen and (min-width: $lg-min) {
-		max-width: 635px;
+		max-width: 620px;
 		min-width: 550px;
 		width: 100%;
 	}
@@ -100,6 +100,8 @@
 	font-size: var(--text-font-size-type-2);
 	line-height: var(--text-line-height-type-2);
 	@media screen and (min-width: $lg-min) {
+		max-width: 445px;
+		width: 100%;
 		font-size: var(--text-font-size-type-1);
 	}
 }
