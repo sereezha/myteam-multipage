@@ -1,0 +1,101 @@
+@use '/styles/variables/breakpoints.module' as *;
+
+.contactContentInner {
+	--padding-top: 80px;
+	--padding-bottom: 88px;
+	--pt: calc(var(--padding-top) - var(--header-vertical-padding));
+
+	position: relative;
+	overflow: hidden;
+	padding: var(--pt) 0 var(--padding-bottom);
+
+	@media screen and (min-width: $sm-min) {
+		--padding-top: 112px;
+		--padding-bottom: 112px;
+	}
+
+	@media screen and (min-width: $lg-min) {
+		--padding-top: 120px;
+		--padding-bottom: 120px;
+	}
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 50% 50%;
+	}
+
+	&::before {
+		display: none;
+
+		@media screen and (min-width: $sm-min) {
+			--size: 200px;
+			--top: var(--pt);
+			--left: calc(var(--size) / 2 * -1);
+
+			display: block;
+			top: var(--top);
+			left: var(--left);
+			width: var(--size);
+			height: var(--size);
+			background-image: url('/assets/bg-pattern-about-2-contact-1.svg');
+		}
+
+		@media screen and (min-width: $lg-min) {
+			--left: calc((var(--size) - 30px) * -1);
+		}
+
+		@media screen and (min-width: $xl-min) {
+			--left: calc(var(--size) / 2 * -1);
+		}
+
+		@media screen and (min-width: $illustrations-breakpoint) {
+			--left: 0;
+		}
+	}
+
+	&::after {
+		--width: 200px;
+		--height: 225px;
+		--bottom: calc(var(--height) / 2 * -1);
+		--right: calc(var(--width) / 2 * -1);
+
+		right: var(--right);
+		bottom: var(--bottom);
+		width: var(--width);
+		height: var(--height);
+		background-image: url('/assets/bg-pattern-contact-2.svg');
+
+		@media screen and (min-width: $sm-min) {
+			--bottom: 0;
+			--right: -100%;
+		}
+
+		@media screen and (min-width: $illustrations-breakpoint) {
+			--right: 0;
+		}
+	}
+}
+
+.wrapper {
+	position: relative;
+	z-index: 2;
+	display: grid;
+	justify-content: center;
+	text-align: center;
+	gap: 56px;
+
+	@media screen and (min-width: $sm-min) {
+		gap: 64px;
+	}
+
+	@media screen and (min-width: $lg-min) {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 30px;
+		justify-content: start;
+		text-align: left;
+	}
+}

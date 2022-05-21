@@ -1,0 +1,140 @@
+@use '/styles/mixins/styles.module' as *;
+
+.teamMember {
+	--member-accent-color: var(--color-secondary);
+	--vertical-padding: 32px;
+
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	min-height: 250px;
+	perspective: 800px;
+
+	&.active .moreButton {
+		background-color: var(--color-secondary);
+	}
+
+	&.active .moreButtonIcon {
+		background-color: var(--color-secondary);
+		transform: rotate(45deg);
+	}
+
+	&.active .front {
+		transform: rotateY(-180deg);
+	}
+
+	&.active .back {
+		transform: rotateY(0deg);
+	}
+}
+
+.card {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: var(--vertical-padding) 24px;
+	text-align: center;
+	background-color: var(--color-midnight-green);
+	perspective: 500px;
+	backface-visibility: hidden;
+	transition: transform 0.5s ease-out;
+
+	&.front {
+		transform: rotateY(0);
+	}
+
+	&.back {
+		transform: rotateY(180deg);
+		background-color: var(--color-dark-green);
+	}
+}
+
+.avatarWrapper {
+	--radius: 50%;
+
+	width: 100px;
+	height: 100px;
+	margin-bottom: 14px;
+	border: 2px solid var(--member-accent-color);
+	border-radius: var(--radius);
+}
+
+.avatar {
+	border-radius: var(--radius);
+}
+
+.name {
+	color: var(--member-accent-color);
+	font-weight: 700;
+	font-size: var(--text-font-size-type-1);
+	line-height: var(--text-line-height-type-1);
+
+	&.back {
+		margin-bottom: 8px;
+    @include multi-line-truncate(2);
+	}
+}
+
+.jobPosition {
+	margin-bottom: 28px;
+	font-style: italic;
+	font-weight: 500;
+}
+
+.moreButton {
+	--size: var(--more-button-size);
+	--mb: calc(var(--size) / 2 * -1);
+
+	position: relative;
+	z-index: 2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: var(--size);
+	height: var(--size);
+	border-radius: 50%;
+	margin-bottom: var(--mb);
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	background-color: var(--color-accent);
+	transition: background-color var(--transition-duration);
+
+	@media (hover: hover) {
+		&:hover {
+			background-color: var(--color-secondary);
+		}
+	}
+}
+
+.moreButtonIcon {
+	fill: var(--color-sacramento-green);
+	transition: transform 0.5s cubic-bezier(0.07, 1.18, 0.51, 0.96);
+}
+
+.about {
+	max-width: 234px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.aboutQuote {
+	margin-bottom: 24px;
+	@include multi-line-truncate(3);
+
+	&::before {
+		content: open-quote;
+	}
+
+	&::after {
+		content: close-quote;
+	}
+}

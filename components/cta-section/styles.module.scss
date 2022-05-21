@@ -1,0 +1,46 @@
+@use '/styles/variables/breakpoints.module' as *;
+
+.ctaSection {
+	background-color: var(--color-accent);
+}
+
+.ctaSectionInner {
+	position: relative;
+	overflow: hidden;
+	padding: 82px 0;
+
+	@media screen and (min-width: $sm-min) {
+		padding: 76px 0;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: -20px;
+		left: 0;
+		width: 200px;
+		height: 122px;
+		background-image: url('/assets/bg-pattern-home-6-about-5.svg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 50% 50%;
+		@media screen and (min-width: $xxl-min) {
+			bottom: 0;
+		}
+	}
+}
+
+.wrapper {
+	isolation: isolate;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+
+	@media screen and (min-width: $sm-min) {
+		text-align: right;
+		flex-direction: row;
+	}
+}

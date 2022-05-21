@@ -1,0 +1,18 @@
+@use '/styles/variables/breakpoints.module' as *;
+
+.container {
+	max-width: 1190px;
+	width: 100%;
+	padding: 0 40px;
+	margin: 0 auto;
+
+	&.small {
+		@media screen and (max-width: $lg-max) {
+			max-width: 624px;
+		}
+	}
+
+	@media screen and (max-width: $sm-max) {
+		padding: 0 24px;
+	}
+}

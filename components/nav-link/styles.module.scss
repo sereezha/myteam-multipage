@@ -1,0 +1,28 @@
+.navLink {
+	--font-size: var(--text-font-size-type-1);
+	--line-height: var(--text-line-height-type-1);
+
+	font-weight: 600;
+	font-size: var(--font-size);
+	line-height: var(--line-height);
+	color: var(--color-white);
+	transition: color var(--transition-duration);
+  text-transform: lowercase;
+
+	&.active {
+		color: var(--color-accent);
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			color: var(--color-accent);
+		}
+	}
+
+	&.footer {
+		@media screen and (max-width: 991px) {
+			--font-size: var(--text-font-size-type-2);
+			--line-height: var(--text-line-height-type-2);
+		}
+	}
+}

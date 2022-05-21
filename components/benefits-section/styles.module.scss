@@ -1,0 +1,112 @@
+@use '/styles/variables/breakpoints.module' as *;
+
+.benefitsSection {
+	background-color: var(--color-sacramento-green);
+}
+
+.benefitsSectionInner {
+	--offset-from-line: 32px;
+	--illustration-cirlce-width: 200px;
+
+	position: relative;
+	overflow: hidden;
+	padding: 64px 0;
+
+	&::before {
+		--right: calc(var(--illustration-cirlce-width) / 2 * -1);
+
+		content: '';
+		position: absolute;
+		top: 0;
+		right: var(--right);
+		width: 200px;
+		height: 244px;
+		background-image: url('/assets/bg-pattern-home-3.svg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 50% 50%;
+	}
+
+	@media screen and (min-width: $sm-min) {
+		padding: 100px 0;
+	}
+
+	@media screen and (min-width: $lg-min) {
+		padding: 140px 0;
+
+		&::before {
+			top: auto;
+			bottom: 0;
+		}
+	}
+
+	@media screen and (min-width: $illustrations-breakpoint) {
+		&::before {
+			right: 0;
+		}
+	}
+}
+
+.wrapper {
+	isolation: isolate;
+	@media screen and (min-width: $lg-min) {
+		display: flex;
+		align-items: flex-start;
+		gap: 125px;
+	}
+}
+
+.intro {
+	width: calc(100% - var(--illustration-cirlce-width) / 2);
+	margin-bottom: 56px;
+	@media screen and (min-width: $sm-min) {
+		margin-bottom: 64px;
+	}
+
+	@media screen and (min-width: $lg-min) {
+		width: 100%;
+		max-width: 445px;
+	}
+}
+
+.title {
+	margin-top: var(--offset-from-line);
+	@media screen and (min-width: $lg-min) {
+		--offset-from-line: 32px;
+	}
+}
+
+.benefitsList {
+	display: flex;
+	flex-direction: column;
+	gap: 48px;
+	text-align: center;
+	@media screen and (min-width: $sm-min) {
+		text-align: left;
+	}
+
+	@media screen and (min-width: $lg-min) {
+		margin-top: 32px;
+	}
+}
+
+.benefitsItem {
+	@media screen and (min-width: $sm-min) {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 24px;
+	}
+}
+
+.benefitsImage {
+	flex-shrink: 0;
+}
+
+.benefitsTitle {
+	margin-bottom: 8px;
+}
+
+.benefitsDescription {
+	color: var(--color-light-gray);
+}

@@ -1,0 +1,22 @@
+.socialsList {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
+.socialsListLink {
+	--icon-color: var(--color-white);
+
+	display: flex;
+
+	.socialsIcon {
+		fill: var(--icon-color);
+		transition: fill var(--transition-duration);
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			--icon-color: var(--color-accent);
+		}
+	}
+}

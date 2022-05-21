@@ -1,0 +1,22 @@
+@use '/styles/variables/breakpoints.module' as *;
+
+.team {
+	--cols: 1;
+	--row-gap: 0;
+	--column-gap: 24px;
+
+	display: grid;
+	grid-template-columns: repeat(var(--cols), 1fr);
+	gap: calc(var(--more-button-half-size) + var(--column-gap)) var(--row-gap);
+
+	@media screen and (min-width: $sm-min) {
+		--cols: 2;
+		--row-gap: 12px;
+	}
+
+	@media screen and (min-width: $lg-min) {
+		--cols: 3;
+		--row-gap: 30px;
+		--column-gap: 48px;
+	}
+}

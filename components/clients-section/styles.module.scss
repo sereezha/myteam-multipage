@@ -1,0 +1,85 @@
+@use '/styles/variables/breakpoints.module' as *;
+
+.clientsSection {
+	background-color: var(--color-sacramento-green);
+}
+
+.clientsSectionInner {
+  position: relative;
+  overflow: hidden;
+	padding: 88px 0;
+
+	@media screen and (min-width: $sm-min) {
+		padding: 100px 0;
+	}
+
+	@media screen and (min-width: $lg-min) {
+		padding: 140px 0;
+	}
+
+	&::before {
+    --size: 200px;
+    --top: calc(var(--size) / 2 * -1);
+    --left: var(--top);
+
+		content: '';
+		position: absolute;
+    top: var(--top);
+    left: var(--left);
+    width: var(--size);
+    height: var(--size);
+		background-image: url('/assets/bg-pattern-about-4.svg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 50% 50%;
+
+    @media screen and (min-width: $sm-min) {
+      --left: 0;
+    }
+
+    @media screen and (min-width: $lg-min) {
+      --top: 0;
+    }
+	}
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 64px;
+
+	@media screen and (min-width: $sm-min) {
+		gap: 48px;
+	}
+
+	@media screen and (min-width: $lg-min) {
+		gap: 64px;
+	}
+}
+
+.clientsList {
+	display: flex;
+	flex-direction: column;
+	gap: 56px;
+
+	@media screen and (min-width: $sm-min) {
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 50px;
+	}
+
+	@media screen and (min-width: $lg-min) {
+		gap: 80px;
+	}
+}
+
+.clientsListItem {
+	@media screen and (max-width: $sm-max) {
+		max-width: 165px;
+		width: 100%;
+	}
+}

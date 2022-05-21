@@ -1,0 +1,113 @@
+@use '/styles/variables/breakpoints.module' as *;
+
+.homeHeaderInner {
+	--padding-top: 80px;
+	--padding-bottom: 200px;
+
+	position: relative;
+	overflow: hidden;
+
+	@media screen and (min-width: $sm-min) {
+		--padding-top: 112px;
+		--padding-bottom: 256px;
+	}
+
+	@media screen and (min-width: $lg-min) {
+		--padding-top: 120px;
+		--padding-bottom: 120px;
+	}
+}
+
+.content {
+	--pt: calc(var(--padding-top) - var(--header-vertical-padding));
+	position: relative;
+	z-index: 1;
+	max-width: 450px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: var(--pt) 0 var(--padding-bottom);
+	text-align: center;
+
+	&::after {
+		content: '';
+		position: absolute;
+		background-image: url('/assets/bg-pattern-home-2.svg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 50% 50%;
+		bottom: 0;
+		right: 50%;
+		transform: translateX(50%);
+		width: 358px;
+		height: 100px;
+	}
+
+	@media screen and (min-width: $sm-min) {
+		max-width: 100%;
+	}
+
+	@media screen and (min-width: $lg-min) {
+		display: flex;
+		align-items: flex-start;
+		gap: 30px;
+		text-align: left;
+
+		&::after {
+			right: 0;
+			transform: translateX(0);
+		}
+
+		&::before {
+			--size: 200px;
+			--left: calc(var(--size) / 2 * -1);
+			--right: calc(100% + var(--size) / 2);
+
+			content: '';
+			position: absolute;
+			top: var(--pt);
+			right: var(--right);
+			width: var(--size);
+			height: var(--size);
+			background-image: url('/assets/bg-pattern-home-1.svg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: 50% 50%;
+		}
+	}
+
+	@media screen and (min-width: $illustrations-breakpoint) {
+		&::before {
+			--right: calc(100% + var(--size) / 6);
+		}
+	}
+}
+
+.title {
+	margin-bottom: 18px;
+	@media screen and (min-width: $lg-min) {
+		max-width: 635px;
+		min-width: 550px;
+		width: 100%;
+	}
+}
+
+.titleAccent {
+	color: var(--color-accent);
+}
+
+.description {
+	font-size: var(--text-font-size-type-2);
+	line-height: var(--text-line-height-type-2);
+	@media screen and (min-width: $lg-min) {
+		font-size: var(--text-font-size-type-1);
+	}
+}
+
+.lineAboveText {
+	display: none;
+	@media screen and (min-width: $lg-min) {
+		display: block;
+		margin-bottom: 80px;
+	}
+}

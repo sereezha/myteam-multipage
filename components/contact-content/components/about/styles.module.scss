@@ -1,0 +1,45 @@
+@use '/styles/variables/breakpoints.module' as *;
+
+.mainTitle {
+	margin-bottom: 16px;
+	@media screen and (min-width: $sm-min) {
+		margin-bottom: 24px;
+	}
+	@media screen and (min-width: $sm-min) {
+		margin-bottom: 16px;
+	}
+}
+
+.secondaryTitle {
+	margin-bottom: 40px;
+  font-size: 32px;
+	@media screen and (min-width: $sm-min) {
+		margin-bottom: 24px;
+	}
+	@media screen and (min-width: $sm-min) {
+		margin-bottom: 32px;
+	}
+}
+
+.aboutListItem {
+	display: flex;
+	align-items: center;
+	gap: 23px;
+
+	&:not(:last-child) {
+		margin-bottom: 24px;
+		@media screen and (min-width: $sm-min) {
+			margin-bottom: 8px;
+		}
+	}
+}
+
+.aboutListImage {
+	flex-shrink: 0;
+}
+
+.aboutListDescription {
+	text-align: left;
+	font-size: var(--text-font-size-type-1);
+	line-height: var(--text-line-height-type-1);
+}

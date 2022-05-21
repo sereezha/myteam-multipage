@@ -1,0 +1,103 @@
+:root {
+  --color-white: hsl(0, 0%, 100%);
+  --color-light-gray: hsl(186, 11%, 82%);
+  --color-gray: hsl(184, 9%, 63%);
+  --color-light-coral: hsl(0, 87%, 73%);
+  --color-police-blue: hsl(187, 41%, 29%);
+  --color-rapture-blue: hsl(179, 41%, 63%);
+  --color-dark-green: hsl(186, 100%, 8%);
+  --color-sacramento-green: hsl(186, 96%, 10%);
+  --color-jungle-green: hsl(186, 100%, 14%);
+  --color-midnight-green: hsl(186, 97%, 17%);
+
+  --color-error: var(--color-light-coral);
+  --color-accent: var(--color-light-coral);
+  --color-secondary: var(--color-rapture-blue);
+  --color-text: var(--color-white);
+  --body-background: var(--color-midnight-green);
+
+  --transition-duration: 0.2s;
+
+  --text-font-size-type-1: 18px;
+  --text-line-height-type-1: 1.55;
+  --text-font-size-type-2: 15px;
+  --text-line-height-type-2: 1.66;
+
+	--header-vertical-padding: 48px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.62;
+  font-size: var(--text-font-size-type-2);
+  color: var(--color-text);
+  font-weight: 600;
+  background-color: var(--body-background);
+  font-family: 'Livvic', sans-serif;
+  -webkit-font-smoothing: antialiased;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+}

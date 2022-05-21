@@ -1,0 +1,54 @@
+@use '/styles/variables/breakpoints.module' as *;
+
+.heading {
+	font-weight: 700;
+	font-size: var(--font-size);
+	color: var(--heading-color);
+	line-height: var(--line-height, 1);
+
+	&.heading-0 {
+		--font-size: 100px;
+	}
+
+	&.heading-1 {
+		--font-size: 64px;
+	}
+
+	&.heading-2 {
+		--font-size: 48px;
+	}
+
+	&.heading-3 {
+		--font-size: 18px;
+    --line-height: 1.5;
+	}
+
+	@media screen and (max-width: 991px) {
+		&.heading-0 {
+			--font-size: 64px;
+		}
+
+		&.heading-2 {
+			--font-size: 32px;
+		}
+	}
+
+	@media screen and (max-width: 649px) {
+		&.heading-0,
+		&.heading-1 {
+			--font-size: 40px;
+		}
+	}
+
+	&.light {
+		--heading-color: var(--color-white);
+	}
+
+	&.dark {
+		--heading-color: var(--color-sacramento-green);
+	}
+
+  &.accent {
+		--heading-color: var(--color-accent);
+  }
+}

@@ -1,0 +1,6 @@
+@mixin multi-line-truncate($line-amount) {
+	display: -webkit-box;
+	-webkit-line-clamp: $line-amount;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}

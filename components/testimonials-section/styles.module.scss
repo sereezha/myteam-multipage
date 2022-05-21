@@ -1,0 +1,127 @@
+@use '/styles/variables/breakpoints.module' as *;
+
+.testimonialsSection {
+	background-color: var(--color-jungle-green);
+}
+
+.testimonialsSectionInner {
+	position: relative;
+	overflow: hidden;
+	padding: 140px 0;
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 50% 50%;
+	}
+
+	&::before {
+		top: 0;
+		left: 0;
+		width: 147px;
+		height: 100px;
+		background-image: url('/assets/bg-pattern-home-4-about-3.svg');
+	}
+
+	&::after {
+		--size: 200px;
+		--offset: calc(var(--size) / 2 * -1);
+
+		bottom: var(--offset);
+		right: 0;
+		width: var(--size);
+		height: var(--size);
+		background-image: url('/assets/bg-pattern-about-2-contact-1.svg');
+	}
+
+	@media screen and (max-width: 991px) {
+		padding: 100px 0;
+	}
+
+	@media screen and (max-width: 649px) {
+		padding: 140px 0 164px;
+	}
+}
+
+.title {
+	margin-bottom: 56px;
+	text-align: center;
+	@media screen and (max-width: 991px) {
+		margin-bottom: 48px;
+	}
+}
+
+.titleSecondary {
+	color: var(--color-secondary);
+}
+
+.testimonials {
+	display: flex;
+	align-items: center;
+	gap: 30px;
+
+	@media screen and (max-width: 991px) {
+		flex-direction: column;
+		gap: 48px;
+	}
+}
+
+.testimonialsItem {
+	flex-basis: 100%;
+	text-align: center;
+}
+
+.testimonialsItemWrapper {
+	&::before {
+		content: '';
+		isolation: isolate;
+		display: block;
+		width: 67px;
+		height: 56px;
+		margin: 0 auto -20px;
+		background-image: url('/assets/icon-quotes.svg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 50% 50%;
+	}
+}
+
+.testimonialsQuote {
+	isolation: isolate;
+	margin-bottom: 24px;
+	font-weight: 600;
+}
+
+.testimonialsAuthor {
+	margin-bottom: 2px;
+	font-style: var(--text-font-size-type-1);
+	line-height: var(--text-line-height-type-1);
+	font-weight: 700;
+	color: var(--color-secondary);
+}
+
+.testimonialsPosition {
+	margin-bottom: 34px;
+	font-style: italic;
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 1.38;
+}
+
+.testimonialsImageWrapper {
+	--radius: 50%;
+	--border-width: 2px;
+	--size: calc(62px + var(--border-width) * 2);
+
+	width: var(--size);
+	height: var(--size);
+	border: var(--border-width) solid var(--color-secondary);
+	margin: 0 auto;
+	border-radius: var(--radius);
+}
+
+.testimonialsImage {
+	border-radius: var(--radius);
+}
