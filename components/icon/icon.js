@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { getIcon } from '../icons';
 
-const Icon = () => {
-  return (
-    <div>Icon</div>
-  )
-}
+const Icon = ({ glyph, ...otherProps }) => {
+	const Icon = getIcon(glyph);
 
-export default Icon
+	if (!Icon) return null;
+
+	return <Icon {...otherProps} />;
+};
+
+export default Icon;

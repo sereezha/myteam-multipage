@@ -2,25 +2,8 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import classNames from 'classnames';
 import SocialsList from '../../../socials-list';
+import Icon from '../../../icon';
 import s from './styles.module.scss';
-import { getIcon } from '../../../icons';
-
-const LINKS = [
-	{
-		id: 'twitter',
-		label: 'twitter',
-		icon: 'twitter',
-		href: 'twitter',
-	},
-	{
-		id: 'linkedin',
-		label: 'linkedin',
-		icon: 'linkedin',
-		href: 'linkedin',
-	},
-];
-
-const CrossIcon = getIcon('cross');
 
 const TeamMember = ({ member }) => {
 	const { avatar, name, job, quote, socials } = member;
@@ -61,7 +44,7 @@ const TeamMember = ({ member }) => {
 				className={s.moreButton}
 				aria-label={`${isActive ? 'Hide' : 'Show'} description of member`}
 			>
-				<CrossIcon className={s.moreButtonIcon} />
+				<Icon className={s.moreButtonIcon} glyph="cross" />
 			</button>
 		</li>
 	);

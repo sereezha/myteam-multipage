@@ -27,5 +27,6 @@ export const getStaticProps = async () => {
 		props: {
 			socials,
 		},
+    revalidate: parseInt(process.env.REVALIDATE_TIME)
 	};
 };

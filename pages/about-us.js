@@ -41,5 +41,6 @@ export const getStaticProps = async () => {
 			team,
 			socials,
 		},
+		revalidate: parseInt(process.env.REVALIDATE_TIME),
 	};
 };
