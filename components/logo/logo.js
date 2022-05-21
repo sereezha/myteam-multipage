@@ -5,7 +5,7 @@ import { ROUTES } from '../../constants';
 
 const Logo = () => (
 	<Link href={ROUTES.home}>
-		<a className={s.logo}>
+		<a className={s.logo} aria-label="myteam logo">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="160"
