@@ -5,6 +5,7 @@ const Document = () => {
 	return (
 		<Html>
 			<Head>
+        <link rel="shortcut icon" href="/assets/favicon-32x32.png" type="image/x-icon" />
 				<link rel="preconnect" href="https://fonts.googleapis.com" />
 				<link
 					rel="preconnect"
